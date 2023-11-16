@@ -8,13 +8,16 @@ public class Main{
         double var1 = sc.nextDouble();
         System.out.println("Enter your 2nd number");
         double var2 = sc.nextDouble();
-        System.out.println("Enter your choice\n1:Addition ");
+        System.out.println("Enter your choice\n1:Addition\n2:Subtraction ");
         int choice = sc.nextInt();
+        double var3;
         if(choice==1){
-            double var3 = var1+var2;
+            var3 = var1+var2;
             System.out.println("Addition of your input is :"+var3);
-        }
-        else {
+        } else if (choice==2) {
+            var3= var1-var2;
+            System.out.println("Subtraction of your input is :"+var3);
+        } else {
             System.out.println("Invalid option");
         }
     }
