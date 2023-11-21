@@ -1,4 +1,5 @@
 import javax.xml.namespace.QName;
+import java.util.Scanner;
 
 class Student{
     String name;
@@ -56,7 +57,7 @@ public class OOPsDemo {
         Cars c8 = new Cars("ABC128","Audi","White");
 
         //manually assigning the variable in an array
-        Cars[] carlist = new Cars[8];
+        Cars[] carlist = new Cars[15];
         carlist[0]=c1;
         carlist[1]=c2;
         carlist[2]=c3;
@@ -66,12 +67,44 @@ public class OOPsDemo {
         carlist[6]=c7;
         carlist[7]=c8;
 
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter car name");
+        String name = sc.next();
+        System.out.println("Enter licence plate");
+        String lp = sc.next();
+        System.out.println("Enter color");
+        String co = sc.next();
+        Cars c9= new Cars(lp,name,co);
+        for (int i=0;i<carlist.length;i++){
+            if (carlist[i]==null)
+            {
+                carlist[i]=c9;
+                break;
+            }
+        }
+
+        boolean checkCars = false;
+        for (int i=0;i<carlist.length;i++){
+            if (carlist[i]==null)
+            {
+                checkCars = true;
+                break;
+            }
+        }
+
+        if (checkCars){
+            System.out.println("Parking space is available");
+        }else {
+            System.out.println("No parking space");
+        }
 
 
         for(int i= 0; i<carlist.length;i++){
-            if(carlist[i].brand.equals("Toyota")){
+            if(carlist[i]!= null){
                 System.out.println(carlist[i]);
             }
         }
     }
 }
+
+
