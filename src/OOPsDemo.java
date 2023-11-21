@@ -1,4 +1,5 @@
 import javax.xml.namespace.QName;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Student{
@@ -58,6 +59,10 @@ public class OOPsDemo {
 
         //manually assigning the variable in an array
         Cars[] carlist = new Cars[15];
+
+        // let me create an array list of cars
+        ArrayList parkedCars = new ArrayList();
+
         carlist[0]=c1;
         carlist[1]=c2;
         carlist[2]=c3;
